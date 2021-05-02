@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,17 +14,21 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        return response()
+            ->view('post.index');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Post.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return response()
+            ->view('post.create', [
+                'tags' => Tag::all()->sortBy('name'),
+            ]);
     }
 
     /**
@@ -34,7 +39,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the request
+        $validated = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+            'tags' => 'exists:tags,id'
+        ]);
+
+        // get the new tags if available
+        $validated['tags'][] = array_filter(explode(',', $request->tag_text), function($tag){
+            $tag = Tag::firstOrCreate([
+                'name' => $tag,
+            ]);
+            return $tag->id;
+        });
+
+        dd($validated);
+
+
     }
 
     /**

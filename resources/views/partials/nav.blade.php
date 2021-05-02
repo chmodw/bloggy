@@ -30,6 +30,9 @@
                     </li>
                 @else
                     <li class="mr-3">
+                        <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="{{ route('post.create') }}">New Post</a>
+                    </li>
+                    <li class="mr-3">
                         <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="#">My Posts</a>
                     </li>
                     <li class="mr-3">

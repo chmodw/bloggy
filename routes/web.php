@@ -15,6 +15,9 @@ use App\Http\Controllers\PostController;
 */
 
 Auth::routes();
+
 Route::get('/',[PostController::class, 'index'])->name('home');
-Route::get('/{id}',[PostController::class, 'show']);
+Route::get('/post/create',[PostController::class, 'create'])->name('post.create');
+Route::get('/post/{id}',[PostController::class, 'show'])->name('post.show');
+Route::post('/post',[PostController::class, 'store'])->name('post.store');
 
