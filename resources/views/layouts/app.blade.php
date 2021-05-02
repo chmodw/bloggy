@@ -8,7 +8,9 @@
     <meta name="author" content="Chamodya Wimansha" />
     <meta name="description" content="A simple and cute bolg site" />
     <meta name="keywords" content="simple, blog" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 
@@ -25,6 +27,5 @@
 <!--/container-->
 
 @include('partials.footer')
-<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

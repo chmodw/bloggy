@@ -6,7 +6,7 @@
 
         <div class="pl-4">
             <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
-                Bloggy
+                {{ config('app.name', 'Bloggy') }}
             </a>
         </div>
 
@@ -21,15 +21,25 @@
 
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20" id="nav-content">
             <ul class="list-reset lg:flex justify-end flex-1 items-center">
-                <li class="mr-3">
-                    <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="#">Active</a>
-                </li>
-                <li class="mr-3">
-                    <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="#">link</a>
-                </li>
-                <li class="mr-3">
-                    <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="#">link</a>
-                </li>
+                @guest
+                    <li class="mr-3">
+                        <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="{{ route('login') }}">Login</a>
+                    </li>
+                    <li class="mr-3">
+                        <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="{{ route('register') }}">Register</a>
+                    </li>
+                @else
+                    <li class="mr-3">
+                        <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="#">My Posts</a>
+                    </li>
+                    <li class="mr-3">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                            <button class="inline-block py-2 px-4 text-gray-900 font-bold no-underline">Logout</button>
+                        </form>
+                    </li>
+
+                @endguest
             </ul>
         </div>
     </div>
