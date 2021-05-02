@@ -22,7 +22,7 @@
 
         <div class="pl-4">
             <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
-                Minimal Blog
+                Bloggy
             </a>
         </div>
 
@@ -92,19 +92,6 @@
 
         <blockquote class="border-l-4 border-green-500 italic my-8 pl-8 md:pl-12">Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.</blockquote>
 
-        <p class="py-6">Example code block:</p>
-        <pre class="bg-gray-900 rounded text-white font-mono text-base p-2 md:p-4">
-				<code class="break-words whitespace-pre-wrap">
-{{--&lt;header class="site-header outer"&gt;--}}
-{{--&lt;div class="inner"&gt;--}}
-{{--{{&gt; "site-nav"}}--}}
-{{--&lt;/div&gt;--}}
-{{--&lt;/header&gt;--}}
-				</code>
-			</pre>
-
-
-        <!--/ Post Content-->
 
     </div>
 
@@ -120,7 +107,7 @@
     <!--Subscribe-->
     <div class="container px-4">
         <div class="font-sans bg-gradient-to-b from-green-100 to-gray-100 rounded-lg shadow-xl p-4 text-center">
-            <h2 class="font-bold break-normal text-xl md:text-3xl">Subscribe to my Newsletter</h2>
+            <h2 class="font-bold break-normal text-xl md:text-3xl">Subscribe to Bloggy's Newsletter</h2>
             <h3 class="font-bold break-normal text-gray-600 text-sm md:text-base">Get the latest posts delivered right to your inbox</h3>
             <div class="w-full text-center pt-4">
                 <form action="#">
